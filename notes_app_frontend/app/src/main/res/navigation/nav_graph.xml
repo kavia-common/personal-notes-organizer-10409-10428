@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="org.example.app.ui.auth.AuthFragment"
+        android:label="Auth">
+        <action
+            android:id="@+id/action_authFragment_to_notesListFragment"
+            app:destination="@id/notesListFragment"
+            app:popUpTo="@id/authFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notesListFragment"
+        android:name="org.example.app.ui.notes.NotesListFragment"
+        android:label="@string/tab_notes">
+        <action
+            android:id="@+id/action_notesListFragment_to_noteEditorFragment"
+            app:destination="@id/noteEditorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteEditorFragment"
+        android:name="org.example.app.ui.notes.NoteEditorFragment"
+        android:label="Note Editor" />
+
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="org.example.app.ui.categories.CategoriesFragment"
+        android:label="@string/tab_categories" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="org.example.app.ui.settings.SettingsFragment"
+        android:label="@string/tab_settings" />
+
+    <!-- Global action for FAB -->
+    <action
+        android:id="@+id/action_global_noteEditorFragment"
+        app:destination="@id/noteEditorFragment" />
+</navigation>
